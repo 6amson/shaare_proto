@@ -1,0 +1,350 @@
+@import '../style/global.scss';
+
+
+
+.productdeet--container {
+    padding: 80px 100px;
+    margin-bottom: 200px;
+    font-family: $bodyFont;
+    width: 835px;
+
+    .section--div1 {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 36px;
+        gap: 32px;
+
+        .subsection--loader1 {
+            min-width: none;
+            flex: 1 1 auto;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #d4d4d4;
+        }
+
+        .subsection--loader2 {
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+        }
+    }
+
+    .question {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: left;
+        margin-bottom: 24px;
+        font-family: $headerFont
+    }
+
+    .options {
+        margin-bottom: 32px;
+    }
+
+    .buttonDiv {
+        width: 100%;
+        margin-top: 50px;
+
+        button {
+            width: inherit;
+            border: none;
+            background: #FF5416;
+            box-shadow: 0px 0px 4px 0px #23218603;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 42px;
+            font-family: $bodyFont;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 24px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .Options--container {
+        margin: 32px 0;
+    }
+
+    .slider--container {
+        width: 100%;
+        position: relative;
+
+        .slider--container--texta {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: left;
+            margin-bottom: 32px;
+            color: $subMainColor2;
+        }
+
+        .slider--container--div1 {
+            width: 100%;
+            height: fit-content;
+            position: relative;
+
+            input {
+                border: none;
+                border-bottom: solid 1px #616161;
+                width: 100%;
+                background: transparent;
+                outline: none;
+                font-family: $bodyFont;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 16px 8px;
+
+                &::placeholder {
+                    font-family: $bodyFont;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    color: #1e1e1e;
+                    opacity: .6;
+                }
+            }
+        }
+    }
+
+    .multichoice--container {
+        width: 689px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+
+        p {
+            padding: 8px 16px;
+            border-radius: 100px;
+            transition: color .3s ease, background .3s ease-in;
+            cursor: pointer;
+        }
+    }
+
+    .OptionsMain--container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .cleaning--container {
+            padding: 14px 16px;
+            border: solid .5px $subMainColor;
+            border-radius: 8px;
+            cursor: pointer;
+            color: $subMainColor2;
+            transition: background .3s ease, color .3s ease;
+
+            &:hover {
+                background: $subMainColor2;
+                color: white;
+                transition: background .3s ease, color .3s ease;
+            }
+
+            .cleaning--container1 {
+                p:first-child {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 30px;
+                    text-align: left;
+                }
+            }
+
+            .cleaning--container2 {
+                overflow-y: scroll;
+                transition: height .2s ease;
+
+                p:first-child {
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 30px;
+                    text-align: left;
+                }
+
+                p{
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 30px;
+                    text-align: left;
+                }
+
+                ul {
+                    margin-bottom: 8px;
+
+                    li {
+                        margin-left: 24px;
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 25px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border: solid 1px $subMainColor2;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid $subMainColor2;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $subMainColor;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+@keyframes fillWidth {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes unfillWidth {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.fill {
+    width: 0;
+    background-color: $subMainColor;
+    animation: fillWidth .5s ease forwards;
+}
+
+.unfill {
+    width: 0;
+    background-color: $subMainColor;
+    animation: unfillWidth .5s ease forwards;
+}
+
+
+
+
+
+
+
+@media(max-width: 1175px) {
+    .multichoiceFinal--container {
+        padding: 32px 0 0 100px;
+    }
+}
+
+
+@media(max-width: 850px) {
+    .productdeet--container {
+        padding: 32px 16px;
+        margin-bottom: 100px;
+        width: 100%;
+
+        .section--div1 {
+            margin-bottom: 40px;
+            gap: 16px;
+
+            .subsection--loader1 {
+                height: 2.5px;
+                border-radius: 2.5px;
+            }
+        }
+
+        .question {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 12px;
+        }
+
+        .slider--container--texta {
+            font-size: 12px;
+        }
+
+        .options {
+            margin-bottom: 16px;
+        }
+
+        .buttonDiv {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .slider--container {
+            width: 100%;
+
+            .slider--container--div1 {
+                width: 100%;
+                height: fit-content;
+                position: relative;
+            }
+        }
+
+        .multichoice--container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+    }
+
+    .OptionsMain--container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .cleaning--container {
+           
+        }
+    }
+
+}
